@@ -5,6 +5,11 @@ void ft_putchar(char c) {
 }
 
 void print_integer(int nb) {
+    if (nb < 0) {
+        nb = -nb;
+        ft_putchar('-');
+    }
+    
     if (nb < 10) {
         ft_putchar(nb + 48);
     }
@@ -15,6 +20,6 @@ void print_integer(int nb) {
 }
 
 int main() {
-    print_integer(50000123);
+    print_integer(-50000123);
     return 0;
 }
