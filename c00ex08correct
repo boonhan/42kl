@@ -58,3 +58,5 @@ void	ft_print_combn(int n)
 		comb(data, 0, 0, n);
 	}
 }
+
+//Ackermann function??
