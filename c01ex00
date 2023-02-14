@@ -7,7 +7,28 @@ void ft_ft(int *nbr)
 {
 	*nbr = 42;
 }
-/*
+
+void ft_ft(int *********nbr)
+{
+	*********nbr = 42;
+}
+
+void swap(int *a, int *b)
+{
+	int temp;
+	temp = *a;
+	*a = *b;
+	*b = temp;
+}
+
+void ft_div_mod(int a, int b, int *div, int *mod)
+{
+	*div = a / b;
+	*mod = a % b;
+}
+
+
+
 void main()
 {
     int i = 10;
@@ -17,4 +38,3 @@ void main()
 	ft_ft(ptr);
 	printf("now ptr is %d\n", *ptr);
 }
-*/
