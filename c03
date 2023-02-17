@@ -1,0 +1,31 @@
+#include <unistd.h>
+#include <stdio.h>
+#include <string.h>
+
+int ft_strcmp(char *dest, char *src)
+{
+    int i = 0;
+    while (dest[i] == src[i])
+    {
+        if (dest[i] == '\0' && src[i] == '\0')
+        {
+            return (0);   
+        }
+        i++;
+    }
+    return (dest[i] - src[i]);
+}
+
+int main() {
+    printf("Hello world\n");
+    char a[] = "arb";
+    char b[] = "arc";
+    char c[] = "some blank space here";
+    printf("a is %s, *a is %c, &a is %d\n", a, *a, &a);
+    printf("b is %s, *b is %c, &b is %d\n", b, *b, &b);
+    printf("ft_strcmp is %d\n", ft_strcmp(a, b));
+    printf("a is %s, *a is %c, &a is %d\n", a, *a, &a);
+    printf("b is %s, *b is %c, &b is %d\n", b, *b, &b);
+    
+    return 0;
+}
