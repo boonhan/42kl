@@ -44,9 +44,9 @@ char *genseq_up(int n, int arr[6][6])
     while (i < 4)
     {
         //seq[i] = '1' + i;
-        seq[i] = arr[1][i+1] + 55;
+        seq[i] = arr[1][i+1] + 48;
+        printf("testing. seq[i] is %c. i is %d\n", seq[i], i);
         i++;
-        printf("testing. seq[i] is %d. i is %d\n", seq[i], i);
     }
 }
 
