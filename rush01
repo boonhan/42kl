@@ -1,0 +1,44 @@
+#include <stdio.h>
+#include <unistd.h>
+
+
+int check_line(int n, char *seq)
+{
+  printf("testing. n is %d, seq is %s\n", n, seq);
+  int i;
+  int j;
+  int result = 4;
+  
+  i = 1;
+  while (seq[i] != '\0')
+  {
+      // check if all previous numbers are higher
+      j = 0;
+      while (j < i)
+      {
+          if (seq[j] > seq[i])
+          {
+              result--;
+              break;
+          }
+          j++;
+      }
+      i++;
+  }
+  printf("result is %d\n", result);
+  if (n == result)
+  {
+      return (1);
+  }
+  else
+  {
+      return (0);
+  }
+}
+
+void main()
+{
+    int i = 2;
+    char *seq = "1432";
+    printf("checkline result for %s is %d\n", seq, check_line(i, seq));
+}
