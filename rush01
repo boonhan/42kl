@@ -1,8 +1,8 @@
 #include <stdio.h>
 #include <unistd.h>
+#include <stdlib.h>
 
-
-int check_line(int n, char *seq)
+int check_line(int n, char *seq) // return 1 if pass check, 0 if fail
 {
   printf("testing. n is %d, seq is %s\n", n, seq);
   int i;
@@ -12,7 +12,6 @@ int check_line(int n, char *seq)
   i = 1;
   while (seq[i] != '\0')
   {
-      // check if all previous numbers are higher
       j = 0;
       while (j < i)
       {
@@ -36,9 +35,32 @@ int check_line(int n, char *seq)
   }
 }
 
+char *genseq_up(int n, int arr[6][6])
+{
+    int i;
+    char seq[4];
+    
+    i = 0;
+    while (i < 4)
+    {
+        //seq[i] = '1' + i;
+        seq[i] = arr[1][i];
+        i++;
+        printf("testing. arr is %d. i is %d\n", seq[i], i);
+    }
+}
+
 void main()
 {
-    int i = 2;
+    int n = 1;
+    //char *arr[] = (char*) malloc(500 * sizeof(char));
+    int arr[6][6];
+    arr[1][1] = 1;
+    arr[1][2] = 2;
+    arr[1][3] = 3;
+    arr[1][4] = 4;
+    //printf("arr is %d\n", arr[1][4]);
     char *seq = "1432";
-    printf("checkline result for %s is %d\n", seq, check_line(i, seq));
+    genseq_up(n, arr);
+    //printf("checkline result for %s is %d\n", seq, check_line(n, seq));
 }
