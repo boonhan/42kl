@@ -2,7 +2,7 @@
 #include <unistd.h>
 #include <stdlib.h>
 
-int check_line(int n, char *seq) // return 1 if pass check, 0 if fail
+int check_line_match(int n, char *seq) // return 1 if pass check, 0 if fail
 {
   printf("testing. n is %d, seq is %s\n", n, seq);
   int i;
@@ -91,5 +91,5 @@ void main()
     //printf("arr is %d\n", arr[1][1]);
     char *seq = "1432";
     genseq_up(n, arr);
-    //printf("checkline result for %s is %d\n", seq, check_line(n, seq));
+    //printf("checkline result for %s is %d\n", seq, check_line_match(n, seq));
 }
