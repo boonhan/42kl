@@ -35,6 +35,29 @@ int check_line_match(int n, char *seq) // return 1 if pass check, 0 if fail
   }
 }
 
+int check_line_validity(char *seq)
+{
+    //printf("testing. n is %d, seq is %s\n", seq);
+  int i;
+  int j;
+  
+  i = 1;
+  while (seq[i] != '\0')
+  {
+      j = 0;
+      while (j < i)
+      {
+          if (seq[j] == seq[i])
+          {
+              return (0);
+          }
+          j++;
+      }
+      i++;
+  }
+      return (1);
+}
+
 int *init_table() // create a 4x4 table (hardcoded under int x and int y)
 {
     printf("testing init table\n");
