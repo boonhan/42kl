@@ -140,8 +140,29 @@ while tries[i] != '\0'
 check n1, n2.
 tries = possible(n1, n2);
 while tries[i] != '\0'
+  if tries[i][0] == firstrow[0] || tries[i][1] == firstrow[1] || tries[i][2] == firstrow[2] || tries[i][3] == firstrow[3]
+    i++;
+    continue // conflict with row 1 - skip this and go to the next i
+  array[0] = tries[i][0] // this can be another loop.
+  array[1] = tries[i][1]
+  array[2] = tries[i][2]
+  array[3] = tries[i][3]
+  loop everything below for each i.
+  i++;
   
-row 2 can only have j combinations.
+check n1, n2.
+tries = possible(n1, n2);
+while tries[i] != '\0'
+  if tries[i][0] == firstrow[0] || tries[i][1] == firstrow[1] || tries[i][2] == firstrow[2] || tries[i][3] == firstrow[3]
+     tries[i][0] == secondrow[0] || tries[i][1] == secondrow[0] || tries[i][2] == secondrow[0] || tries[i][3] == secondrow[0]
+    i++;
+    continue // conflict with row 1 - skip this and go to the next i
+  array[0] = tries[i][0] // this can be another loop.
+  array[1] = tries[i][1]
+  array[2] = tries[i][2]
+  array[3] = tries[i][3]
+  loop everything below for each j.
+  i++;
 for each j, check() if combination is possible, given row 1. edit j.
 loop everything below for each possible j.
 if no more possible j, fail.
