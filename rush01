@@ -16,24 +16,18 @@ int check_line_match(int n, char *seq) // return 1 if pass check, 0 if fail
       while (j < i)
       {
           if (seq[j] > seq[i])
-          {
               result--;
-              break;
-          }
           j++;
       }
       i++;
   }
   printf("result is %d\n", result);
   if (n == result)
-  {
       return (1);
-  }
   else
-  {
       return (0);
-  }
 }
+
 
 int check_line_validity(char *seq)
 {
