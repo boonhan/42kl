@@ -6,6 +6,39 @@
 #include <unistd.h>
 #include <string.h>
 
+
+char *ft_strstr(char *str, char *to_find)
+{
+    printf("ft_strstr called...\n");
+    int i;
+    int j;
+    
+    i = 0;
+    while (str[i] != '\0') // check i, then i++, then run loop
+    {
+        printf("i is %d, str[i] is %c\n", i, str[i]);
+        if (to_find[0] == str[i])
+        {
+            j = 0;
+            printf("start checking needle\n");
+            while (to_find[j] != '\0')
+            {
+                if (to_find[j] != str[i+j])
+                    break;
+                //check if needle[j] matches haystack[j]
+                //if go all the way to the end, success. return address of haystack[i]
+                //printf ("needle[j] is now at %c, should be a null\n", to_find[j]);
+                j++;
+            }
+            if (to_find[j] == '\0')
+                return (&str[i]);
+            printf ("needle[j] is now at %c, should be a null. i is %d\n", to_find[j], i);
+        }
+        i++;
+        
+    }
+}
+
 int ft_strcmp(char *s1, char *s2)
 {
     int i;
