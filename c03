@@ -2,30 +2,34 @@
 #include <stdio.h>
 #include <string.h>
 
-int ft_strcmp(char *dest, char *src)
+#include <stdio.h>
+#include <unistd.h>
+#include <string.h>
+
+int ft_strcmp(char *s1, char *s2)
 {
-    int i = 0;
-    while (dest[i] == src[i])
+    int i;
+    i = 0;
+    while (s1[i++] !='\0')
     {
-        if (dest[i] == '\0' && src[i] == '\0')
-        {
-            return (0);   
-        }
-        i++;
+        if (s1[i] != s2[i])
+            return (s1[i] - s2[i]);
+        if (s2[i] == '\0')
+            return (s1[i]);
     }
-    return (dest[i] - src[i]);
+    return (s2[i - 1]);
 }
 
 int main() {
     printf("Hello world\n");
-    char a[] = "arb";
-    char b[] = "arc";
-    char c[] = "some blank space here";
-    printf("a is %s, *a is %c, &a is %d\n", a, *a, &a);
-    printf("b is %s, *b is %c, &b is %d\n", b, *b, &b);
-    printf("ft_strcmp is %d\n", ft_strcmp(a, b));
-    printf("a is %s, *a is %c, &a is %d\n", a, *a, &a);
-    printf("b is %s, *b is %c, &b is %d\n", b, *b, &b);
+    char i[] = "testing9";
+    char j[] = "testing9";
+    //strcmp finds the first difference, returns s1 - s2.
+    
+    printf("i is %p, &i is %p\n", i, &i);
+    printf("i[1] is %p, i[2] is %p\n", (i+1), (i+2));
+    printf("strcmp is %d\n", strcmp(i, j));
+    printf("ft_str is %d\n", ft_strcmp(i, j));
     
     return 0;
 }
