@@ -80,6 +80,14 @@ int base_num(char *base)
     return (p);
 }
 
+int convert_num(int nbr, char *base)
+{
+    int radix = base_num(base);
+    //last digit
+    int last = nbr % radix;
+    return (last);
+}
+
 void ft_putnbr_base(int nbr, char *base)
 {
     
