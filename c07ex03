@@ -1,0 +1,104 @@
+#include <stdlib.h>
+#include <unistd.h>
+#include <stdio.h>
+
+int	ft_strlen(char *str)
+{
+	int	i;
+
+	i = 0;
+	while (str[i] != '\0')
+		i++;
+	return (i);
+}
+
+int	mal_len(int size, char **strs, char *sep)
+{
+   
+	int	i;
+	int	j;
+	int	p;
+
+	i = 0;
+	p = 0;
+	while (i <= size - 1)
+	{
+	    p += ft_strlen(strs[i]);
+ 		if (i != size - 1)
+ 			p += ft_strlen(sep);
+		i++;
+	}
+	return (p);
+}
+
+void copy_str(int n, char *dst, char *src)
+{
+    int i;
+    
+    i = 0;
+    while (src[i] != '\0')
+    {
+        dst[n] = src[i];
+        i++;
+        n++;
+    }
+}
+
+void copy_whole(int size, char **strs, char *sep, char *dst)
+{
+    int i;
+    int j;
+    
+    i = 0;
+	    j = 0;
+	    while (i <= size - 1)
+	    {
+	        copy_str(j, dst, strs[i]);
+	        j += ft_strlen(strs[i]);
+	        if (i != size - 1)
+	        {
+	            copy_str(j, dst, sep);
+	            j += ft_strlen(sep);
+	        }
+	        i++;
+	    }
+}
+
+char	*ft_strjoin(int size, char **strs, char *sep)
+{
+	char	*arr;
+	int		all_len;
+	int		i;
+	int     j;
+
+	if (size == 0)
+	{
+		arr = malloc(0 * sizeof(char));
+		return (arr);
+	}
+	else
+	{
+	    all_len = mal_len(size, strs, sep);
+	    arr = malloc((all_len + 1) * sizeof(char));
+	    if (arr == NULL)
+	        return (0);
+	    copy_whole(size, strs, sep, arr);
+	}
+	return (arr);
+}
+
+int main() {
+    char i[] = "testg";
+    char k[] = "0123456789";
+    char *j[] = {"abc", "defg", "ghijk"};
+    printf("Hello world\n");
+    //copy_str(3, k, i);
+    //printf("%s\n", k);
+    //printf("%s\n", j);
+    printf("%s..\n", ft_strjoin(3, j, "000"));
+    //printf("%d..\n", mal_len(3, j, "aac"));
+    //printf("%s, %d\n", j[1], ft_strlen(j[0]));
+    //printf("%s\n", i);
+
+    return 0;
+}
