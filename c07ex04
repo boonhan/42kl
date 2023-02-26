@@ -1,0 +1,20 @@
+#include <stdio.h>
+
+int to_base10(int n, int base)
+{
+// convert n in base to base 10.
+    if (n < 10)
+        return (n);
+    else
+    {
+        return (base * convert(n/10, base) + (n%10));
+    }
+}
+
+int main() {
+    printf("Hello world\n");
+    int n = 2345;
+    printf("convert %d gives %d\n", n, to_base10(n,6));
+    return 0;
+}
+
