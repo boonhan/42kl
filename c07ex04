@@ -7,7 +7,7 @@ int to_base10(int n, int base)
         return (n);
     else
     {
-        return (base * convert(n/10, base) + (n%10));
+        return (base * to_base10(n/10, base) + (n%10));
     }
 }
 
