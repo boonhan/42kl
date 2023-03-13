@@ -1,4 +1,4 @@
 rm -f libft.a
-find . -name -type f "*.c" -maxdepth 1 -exec cc -Wall -Wextra -Werror -c
+find . -name "*.c" -type f -maxdepth 1 -exec gcc -Wall -Wextra -Werror -c {} \;
 ar -rcs libft.a *.o
-find . -name -type f "*.o" -maxdepth 1 -delete
+find . -name "*.o" -type f -maxdepth 1 -delete

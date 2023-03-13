@@ -1,6 +1,6 @@
-void  ft_swap(char *s1, char *s2)
+void  ft_swap(int *s1, int *s2)
 {
-  char  *temp;
+  int  temp;
   
   temp = *s1;
   *s1 = *s2;
